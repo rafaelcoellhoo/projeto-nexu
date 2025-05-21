@@ -4,8 +4,8 @@ import PageWrapper from "@/components/PageWrapper";
 export default function Cadastro() {
   return (
     <PageWrapper>
-      <div className="w-full h-full flex justify-center items-center p-20 bg-gradient-to-r from-indigo-800 to-purple-800">
-        <div className="w-full max-w-[600px] bg-white rounded-xl p-10 shadow-xl">
+      <div className="w-full h-full flex justify-center items-center p-20 bg-[#bf2034] from-indigo-800 to-purple-800">
+        <div className="w-full max-w-[600px] bg-[#cead44] rounded-xl p-10 shadow-xl">
           <h1 className="font-bold text-gray-800 text-4xl text-center mb-">
             PlayMatch Nx
             </h1>
@@ -14,16 +14,16 @@ export default function Cadastro() {
           </h1>
           
           <div className="flex flex-col space-y-6">
-            <div>
-              <label className="text-gray-700 font-semibold text-lg">Nome</label>
+            <div className="flex">
+           <div className="flex flex-col">
+           <label className="text-gray-700 font-semibold text-lg">Nome</label>
               <input
                 placeholder="Digite o seu nome"
-                type="text"
+                type="nome"
                 className="w-full h-12 bg-gray-100 p-4 rounded-xl mt-2"
               />
-            </div>
-
-            <div>
+           </div>
+           
               <label className="text-gray-700 font-semibold text-lg">Sobrenome</label>
               <input
                 placeholder="Digite o seu sobrenome"
@@ -31,6 +31,7 @@ export default function Cadastro() {
                 className="w-full h-12 bg-gray-100 p-4 rounded-xl mt-2"
               />
             </div>
+           
 
             <div>
               <label className="text-gray-700 font-semibold text-lg">Email</label>
@@ -52,7 +53,7 @@ export default function Cadastro() {
           </div>
 
           <div className="mt-10 flex flex-col items-center space-y-4">
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-2xl transition duration-300">
+            <button className="bg-[#bf2934] hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-2xl transition duration-300">
               Cadastrar
             </button>
             <p className="text-gray-600 text-sm">
