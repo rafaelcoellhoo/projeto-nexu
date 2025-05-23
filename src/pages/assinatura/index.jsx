@@ -1,78 +1,46 @@
-import { useState } from "react"
-import { BsQrCode } from "react-icons/bs";
+export default function Planos() {
+  const planos = [
+    {
 
+      titulo: "Plano Básico",
+      preco: "R$ 29,90",
+      descricao:
+        "Escrever",
+    },
+    {
+      titulo: "Plano Médio",
+      preco: "R$ 59,90",
+      descricao:
+        "Escrever",
+    },
+    {
+      titulo: "Plano Premium",
+      preco: "R$ 69,90",
+      descricao:
+        "Escrever",
+    },
+  ];
 
-
-
-export default function assinatura() {
-  const [pix, setPix] = useState(false)
-  
   return (
-
-
-    <div className="w-full h-screen bg-[#d9d9d9] grid grid-cols-1">
-      <div className="flex items-center justify-center w-full h-full ">
-        <div className="w-[35%]  rounded-lg flex items-center  p-[40px] flex-col border-2 bg-zinc-200 border-[#DAA520]">
-          <div className="flex gap-3">
-          <button onClick={() => setPix(false)} className="bg-[#daa520] hover:bg-[#bf2034] text-white font-bold py-2 px-4 rounded cursor-pointer">
-            Cartão
+    <section
+      id="planos"
+      className="flex flex-wrap justify-center gap-6 px-4 py-10 bg-gray-100"
+    >
+      {planos.map((plano, index) => (
+        <article
+          key={index}
+          className="bg-white rounded-xl shadow-md w-full max-w-xs p-6 text-center hover:scale-105 transition-transform duration-300"
+        >
+          <h2 className="text-2xl font-bold mb-2">{plano.titulo}</h2>
+          <h1 className="text-3xl font-extrabold text-[#1f3b57] mb-4">{plano.preco}</h1>
+          <p className="text-sm text-gray-700 mb-6">{plano.descricao}</p>
+          <button 
+          onClick={() => window.location.href = "/pagamento"}
+          className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-[#2e3947] font-bold py-2 px-6 rounded-lg hover:scale-105 transition-transform duration-200">
+            Assinar
           </button>
-          <button onClick={() => setPix(true)} className="bg-[#daa520] hover:bg-[#bf2034] text-white font-bold py-2 px-4 rounded cursor-pointer">
-            Pix
-          </button>
-          </div>
-          {pix ? <div className="mt-8 flex flex-col items-center justify-center"><BsQrCode size={230} color="black" />bdhhavbhBSHJGHDGDSBDHHGHDDGSHGBbhjBAHB
-          jdshvbhdbhvdbhadsjrbvhbwhfbhwdhbadshlbvahhebL
-          </div> : <div className="w-full h-full flex flex-col gap-4 mt-2">
-            <div className="w-full h-full flex flex-col">
-              <label htmlFor="nome" className="text-[20px] rounded-md text-black">
-                Nome do Cartão
-              </label>
-              <input type="text"
-                className="w-full h-[40px] rounded-md bg-[#D9D9D9]"
-              />
-            </div>
-            <div className="w-full flex flex-col">
-              <label htmlFor="numero" className="text-[20px] rounded-md text-black">
-                Número do Cartão
-              </label>
-              <input type="number"
-                className="w-full h-[40px] rounded-md bg-[#D9D9D9]" />
-            </div>
-            <div className="flex">
-              <div className="w-[70%] flex flex-col">
-                <label htmlFor="" className="text-[20px] rounded-md  text-black">
-                  Data de expiração
-                </label>
-                <div className="w-full flex gap-2">
-                  <input
-                    type="number"
-                    placeholder="MM"
-                    className="w-[50%] pl-2 h-[40px] rounded-md bg-[#D9D9D9]"
-                  />
-                  <input
-                    type="number"
-                    placeholder="AA"
-                    className="w-[50%] pl-2 h-[40px] rounded-md bg-[#D9D9D9]"
-                  />
-                </div>
-              </div>
-              <div className="w-[30%] pl-2 flex flex-col">
-                <label htmlFor="" className="text-[20px] rounded-md text-black">
-                  CVV
-                </label>
-                <input
-                  type="number"
-                  className="w-full h-[40px] rounded-md bg-[#D9D9D9] pl-2"
-                />
-              </div>
-            </div>
-            <button className="bg-[#daa520] hover:bg-[#bf2034] text-white font-bold py-2 px-4 rounded cursor-pointer">
-              Finalizar Compra
-            </button>
-          </div>}
-        </div>
-      </div>
-    </div>
-  )
+        </article>
+      ))}
+    </section>
+  );
 }
