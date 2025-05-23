@@ -26,19 +26,32 @@ export default function Cadastro() {
       alert("o Nome é obrigatório");
       return;
     }
+    if (!dados.senha){
+      alert("senha errada ")
+    }
+    if (!dados.emailoutelefone){
+      alert("email ou telefone errado")
+    }
     console.log({ dados });
+    const senhaForte = dados.senha.length >= 8 && /\d/.test(dados.senha) && /[A-Z]/.test(dados.senha);
+
+if (!senhaForte) {
+  alert("A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula e um número.");
+  return;
+}
   }
 
   return (
-    <div className="flex items-center justify-center h-screen w-full text-black">
+    <div className="flex items-center justify-center h-screen w-full text-white bg-[#2E3947]">
       <div className="w-full flex flex-col items-center justify-center hidden md:flex">
-        <h1>Play Match NX</h1>
-        <p>Connect With Life And Go Further</p>
-        <img src={"image-nexu.png"} />
+        <p className="flex font-bold text-[#cead44]">conecte-se com pessoas, descubra novos esportes
+        </p>
+        <p className="flex font-bold text-[#cead44]">   e transforme movimento em bem-estar.</p>
+        <img src={"img-nexu.jpg"} />
       </div>
-      <div className="w-full flex items-center justify-center">
+      <div className="w-full h-full flex items-center justify-center bg-[#2E3947]">
         <div className="max-w-[500px]">
-          <h1 className="text-3xl font-bold">Abra uma conta</h1>
+          <h1 className="text-3xl text-white">Abra uma conta</h1>
           <p className="mt-2 font-bold">Crie sua conta grátis</p>
           <form
             onSubmit={enviarFormulario}
@@ -51,21 +64,22 @@ export default function Cadastro() {
                 onChange={(e) => setNome(e.target.value)}
                 name="nome"
                 placeholder="Nome"
-                className="w-full border border-gray-500 rounded-md placeholder:text-black py-1 px-2"
+                className="w-full border border-gray-500 rounded-md placeholder:text-white py-1 px-2"
               />
               <input
                 type="text"
                 name="sobrenome"
                 placeholder="Sobrenome"
-                className="w-full border border-gray-500 rounded-md placeholder:text-black py-1 px-2"
+                className="w-full border border-gray-500 rounded-md placeholder:text-white py-1 px-2"
               />
+
             </div>
             <div>
               <input
                 type="text"
                 name="emailOuNumero"
                 placeholder="E-mail ou número de telefone"
-                className="w-full border border-gray-500 rounded-md placeholder:text-black py-1 px-2"
+                className="w-full border border-gray-500 rounded-md placeholder:text-white py-1 px-2"
               />
             </div>
             <div>
@@ -73,7 +87,7 @@ export default function Cadastro() {
                 type="text"
                 name="confirmarEmailOuNumero"
                 placeholder="Insira novamente E-mail ou número de telefone"
-                className="w-full border border-gray-500 rounded-md placeholder:text-black py-1 px-2"
+                className="w-full border border-gray-500 rounded-md placeholder:text-white py-1 px-2"
               />
             </div>
             <div className="relative">
@@ -81,7 +95,7 @@ export default function Cadastro() {
                 type={mostrarSenha ? "text" : "password"}
                 placeholder="Nova senha"
                 name="senha"
-                className="w-full border border-gray-500 rounded-md placeholder:text-black py-1 px-2"
+                className="w-full border border-gray-500 rounded-md placeholder:text-white py-1 px-2"
               />
               <div className="">
                <label className="font-bold" >Data de nascimento</label>
@@ -89,7 +103,7 @@ export default function Cadastro() {
                 type="date"
                 value={Date}
                 name="dados"
-                className=" border border-gray-500 w-[150px] flex rounded-md placeholder:text-black py-1 px-2"
+                className=" border border-gray-500 w-[150px] flex rounded-md placeholder:text-white py-1 px-2"
               />
               </div>
               <p
@@ -125,7 +139,7 @@ export default function Cadastro() {
             <div>
               <button
                 type="submit"
-                className="bg-green-500 py-1 px-4 text-white font-bold text-xl rounded-md cursor-pointer hover:brightness-75 transition-all"
+                className="bg-[#cead44] py-1 px-4 text-white font-bold text-xl rounded-md cursor-pointer hover:brightness-75 transition-all"
               >
                 Abrir uma conta
               </button>
