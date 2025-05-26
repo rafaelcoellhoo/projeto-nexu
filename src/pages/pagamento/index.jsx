@@ -4,9 +4,10 @@ import { BsQrCode } from "react-icons/bs";
 export default function Assinatura() {
   const [pix, setPix] = useState(false);
 
+
   return (
     <div className="w-full min-h-screen bg-[#d9d9d9] flex items-center justify-center px-4">
-      <div className="w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl rounded-lg p-6 sm:p-10 flex flex-col items-center border-2 bg-zinc-200 border-[#DAA520]">
+      <div className="w-[27%] rounded-lg p-6 flex flex-col items-center border-2 bg-[#2e3947] border-[#2e3947]">
         <div className="flex gap-3 flex-wrap justify-center">
           <button
             onClick={() => setPix(false)}
@@ -29,6 +30,9 @@ export default function Assinatura() {
               bdhhavbhBSHJGHDGDSBDHHGHDDGSHGBbhjBAHB<br />
               jdshvbhdbhvdbhadsjrbvhbwhfbhwdhbadshlbvahhebL
             </p>
+            <button className="mt-2 bg-[#daa520] hover:bg-[#bf2034] text-white font-bold py-3 px-4 rounded cursor-pointer w-full">
+              Finalizar Compra
+            </button>
           </div>
         ) : (
           <div className="w-full flex flex-col gap-4 mt-6">
@@ -73,6 +77,7 @@ export default function Assinatura() {
                 <label className="text-lg text-black">CVV</label>
                 <input
                   type="number"
+                  placeholder="000"
                   className="w-full h-[40px] rounded-md bg-[#D9D9D9] pl-2"
                 />
               </div>
