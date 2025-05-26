@@ -7,6 +7,7 @@ export default function Cadastro() {
   const [nome, setNome] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
+
   function mostrarOuOcultarSenha() {
     setMostrarSenha(!mostrarSenha);
   }
@@ -43,7 +44,7 @@ if (!senhaForte) {
 
   return (
     <div className="flex items-center justify-center h-screen w-full text-white bg-[#2E3947]">
-      <div className="w-full flex flex-col items-center justify-center hidden md:flex">
+      <div className="w-full  flex-col items-center justify-center hidden md:flex">
         <p className="flex font-bold text-[#cead44]">conecte-se com pessoas, descubra novos esportes
         </p>
         <p className="flex font-bold text-[#cead44]">   e transforme movimento em bem-estar.</p>
@@ -58,6 +59,7 @@ if (!senhaForte) {
             className="flex flex-col gap-2 mt-4"
           >
             <div className="flex gap-2">
+
               <input
                 type="text"
                 value={nome}
