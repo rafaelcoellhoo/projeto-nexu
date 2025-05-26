@@ -31,12 +31,12 @@ export default function Planos() {
           key={index}
           className="bg-white rounded-xl shadow-md w-full max-w-xs p-6 text-center hover:scale-105 transition-transform duration-300"
         >
-          <h2 className="text-2xl font-bold mb-2">{plano.titulo}</h2>
-          <h1 className="text-3xl font-extrabold text-[#1f3b57] mb-4">{plano.preco}</h1>
+          <h2 className="text-2xl text-[#2e3947] font-bold mb-2">{plano.titulo}</h2>
+          <h1 className="text-3xl font-extrabold text-[#daa520] mb-4">{plano.preco}</h1>
           <p className="text-sm text-gray-700 mb-6">{plano.descricao}</p>
           <button 
           onClick={() => window.location.href = "/pagamento"}
-          className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-[#2e3947] font-bold py-2 px-6 rounded-lg hover:scale-105 transition-transform duration-200">
+          className="bg-[#2e3947] to-[#1f3b57] text-[#daa520] font-bold py-2 px-6 cursor-pointer rounded-lg hover:scale-105 transition-transform duration-200">
             Assinar
           </button>
         </article>
