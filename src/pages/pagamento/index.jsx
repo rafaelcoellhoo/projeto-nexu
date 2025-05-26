@@ -4,10 +4,9 @@ import { BsQrCode } from "react-icons/bs";
 export default function Assinatura() {
   const [pix, setPix] = useState(false);
 
-
   return (
     <div className="w-full min-h-screen bg-[#d9d9d9] flex items-center justify-center px-4">
-      <div className="w-[27%] rounded-lg p-6 flex flex-col items-center border-2 bg-[#2e3947] border-[#2e3947]">
+      <div className="w-full sm:w-[27%] rounded-lg p-6 flex flex-col items-center border-2 bg-[#2e3947] border-[#2e3947]">
         <div className="flex gap-3 flex-wrap justify-center">
           <button
             onClick={() => setPix(false)}
@@ -27,7 +26,8 @@ export default function Assinatura() {
           <div className="mt-8 flex flex-col items-center justify-center text-center text-sm px-2">
             <BsQrCode size={230} color="black" />
             <p className="mt-4">
-              bdhhavbhBSHJGHDGDSBDHHGHDDGSHGBbhjBAHB<br />
+              bdhhavbhBSHJGHDGDSBDHHGHDDGSHGBbhjBAHB
+              <br />
               jdshvbhdbhvdbhadsjrbvhbwhfbhwdhbadshlbvahhebL
             </p>
             <button className="mt-2 bg-[#daa520] hover:bg-[#bf2034] text-white font-bold py-3 px-4 rounded cursor-pointer w-full">
@@ -89,7 +89,6 @@ export default function Assinatura() {
           </div>
         )}
       </div>
-      
     </div>
   );
 }
